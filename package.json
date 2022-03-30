@@ -1,14 +1,14 @@
 {
-  "name": "@virtuepay/a",
+  "name": "@virtuepay/virtuepay-node",
   "version": "1.0.0",
-  "description": "Pingplusplus API wrapper",
-  "homepage": "https://github.com/VirtuePay/virtuePay-nodejs",
-  "author": "VirtuePay <xufeng.weng@virtuepay.cn> (https://virtuepay.cn/)",
+  "description": "VirtuePay API wrapper",
+  "homepage": "https://virtuepay.cn",
+  "author": "VirtuePay Develop Team <developer@virtuepay.cn> (https://virtuepay.cn/)",
   "repository": {
     "type": "git",
-    "url": "git://github.com/VirtuePay/virtuePay-nodejs.git"
+    "url": "git://github.com/virtuepay/virtuepay-node.git"
   },
-  "bugs:": "https://github.com/VirtuePay/virtuePay-nodejs/issues",
+  "bugs:": "https://github.com/virtuepay/virtuepay-node/issues",
   "engines": {
     "node": ">=4"
   },
