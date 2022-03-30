@@ -1,6 +1,6 @@
 {
   "name": "@virtuepay/virtuepay-node",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "VirtuePay API wrapper",
   "homepage": "https://virtuepay.cn",
   "author": "VirtuePay Develop Team <developer@virtuepay.cn> (https://virtuepay.cn/)",
