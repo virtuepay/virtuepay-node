@@ -11,7 +11,7 @@ var crypto = require("crypto"),
 
 // 验证 webhooks 签名方法：
 // raw_data：VirtuePay 请求 body 的原始数据即 event ，不能格式化；
-// signature：VirtuePay 请求 header 中的 x-pingplusplus-signature 对应的 value 值；
+// signature：VirtuePay 请求 header 中的 x-signature 对应的 value 值；
 // pub_key_path：读取你保存的 VirtuePay 公钥的路径；
 // pub_key_contents：VirtuePay 公钥，获取路径：登录 [Dashboard](https://dashboard.pingxx.com)->点击管理平台右上角公司名称->开发信息-> VirtuePay 公钥
 
