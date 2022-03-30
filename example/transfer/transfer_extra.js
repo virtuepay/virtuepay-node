@@ -23,10 +23,10 @@ var channelExtraMap = {
 
     // open_bank_code 和 open_bank 两个参数必传一个，建议使用 open_bank_code ，若都传参则优先使用 open_bank_code 读取规则；prov 和 city 均为可选参数，如果不传参，则使用默认值 '上海' 给渠道接口。
 
-    // 条件可选，4位，开户银行编号，详情请参考 企业付款（银行卡）银行编号说明：https://www.pingxx.com/api#%E9%93%B6%E8%A1%8C%E7%BC%96%E5%8F%B7%E8%AF%B4%E6%98%8E。
+    // 条件可选，4位，开户银行编号，详情请参考 企业付款（银行卡）银行编号说明：https://www.virtuepay.cn/api#%E9%93%B6%E8%A1%8C%E7%BC%96%E5%8F%B7%E8%AF%B4%E6%98%8E。
     'open_bank_code': '0103',
 
-    // 条件可选，1~50位，开户银行，详情请参考 企业付款（银行卡）银行编号说明：https://www.pingxx.com/api#%E9%93%B6%E8%A1%8C%E7%BC%96%E5%8F%B7%E8%AF%B4%E6%98%8E。
+    // 条件可选，1~50位，开户银行，详情请参考 企业付款（银行卡）银行编号说明：https://www.virtuepay.cn/api#%E9%93%B6%E8%A1%8C%E7%BC%96%E5%8F%B7%E8%AF%B4%E6%98%8E。
     'open_bank': '农业银行',
 
     // 可选，1～20位，省份。
@@ -45,7 +45,7 @@ var channelExtraMap = {
     // 必须，1~100位，收款人姓名。
     'user_name': '张三',
 
-    // 必须，4位，开户银行编号，详情请参考 企业付款（银行卡）银行编号说明：https://www.pingxx.com/api#%E9%93%B6%E8%A1%8C%E7%BC%96%E5%8F%B7%E8%AF%B4%E6%98%8E。
+    // 必须，4位，开户银行编号，详情请参考 企业付款（银行卡）银行编号说明：https://www.virtuepay.cn/api#%E9%93%B6%E8%A1%8C%E7%BC%96%E5%8F%B7%E8%AF%B4%E6%98%8E。
     'open_bank_code': '0103',
 
     // 可选，5位，业务代码，根据通联业务人员提供，不填使用通联提供默认值09900。
@@ -61,7 +61,7 @@ var channelExtraMap = {
     // 必须，1~100位，收款人姓名。
     'user_name': '张三',
 
-    // 必须，4位，开户银行编号，详情请参考 企业付款（银行卡）银行编号说明：https://www.pingxx.com/api#%E9%93%B6%E8%A1%8C%E7%BC%96%E5%8F%B7%E8%AF%B4%E6%98%8E。
+    // 必须，4位，开户银行编号，详情请参考 企业付款（银行卡）银行编号说明：https://www.virtuepay.cn/api#%E9%93%B6%E8%A1%8C%E7%BC%96%E5%8F%B7%E8%AF%B4%E6%98%8E。
     'open_bank_code': '0103',
   },
   balance:{}

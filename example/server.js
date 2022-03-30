@@ -2,12 +2,12 @@
 // VirtuePay Server SDK
 // 说明：
 // 以下代码只是为了方便商户测试而提供的样例代码，商户可根据自己网站需求按照技术文档编写, 并非一定要使用该代码。
-// 接入支付流程参考开发者中心：https://www.pingxx.com/docs/server/charge ，文档可筛选后端语言和接入渠道。
+// 接入支付流程参考开发者中心：https://www.virtuepay.cn/docs/server/charge ，文档可筛选后端语言和接入渠道。
 // 该代码仅供学习和研究 VirtuePay SDK 使用，仅供参考。
 
-// api_key 获取方式：登录 [Dashboard](https://dashboard.pingxx.com)->点击管理平台右上角公司名称->开发信息-> Secret Key
+// api_key 获取方式：登录 [Dashboard](https://dashboard.virtuepay.cn)->点击管理平台右上角公司名称->开发信息-> Secret Key
 var API_KEY = "6913fa78c9fb484781e6617c5cb958b0"
-// app_id 获取方式：登录 [Dashboard](https://dashboard.pingxx.com)->点击你创建的应用->应用首页->应用 ID(App ID)
+// app_id 获取方式：登录 [Dashboard](https://dashboard.virtuepay.cn)->点击你创建的应用->应用首页->应用 ID(App ID)
 var APP_ID = "5c3ea278d5f34a79bfe5819781905551"
 
 var http = require('http');
@@ -16,7 +16,7 @@ var crypto = require('crypto');
 var virtuePay = require('../lib/virtuePay')(API_KEY);
 
 var createPayment = function(channel, amount, client_ip, open_id, cb){
-  // 以下 channel 仅为部分需要 extra 参数的示例，详见 https://www.pingxx.com/document/api#api-c-new
+  // 以下 channel 仅为部分需要 extra 参数的示例，详见 https://www.virtuepay.cn/document/api#api-c-new
   var extra = {};
   switch (channel) {
     case 'alipay_wap':
@@ -50,7 +50,7 @@ var createPayment = function(channel, amount, client_ip, open_id, cb){
   virtuePay.charges.create({
     order_no:  order_no,// 推荐使用 8-20 位，要求数字或字母，不允许其他字符
     app:       {id: APP_ID},
-    channel:   channel,// 支付使用的第三方支付渠道取值，请参考：https://www.pingxx.com/api#api-c-new
+    channel:   channel,// 支付使用的第三方支付渠道取值，请参考：https://www.virtuepay.cn/api#api-c-new
     amount:    amount,//订单总金额, 人民币单位：分（如订单总金额为 1 元，此处请填 100）
     client_ip: client_ip,// 发起支付请求客户端的 IP 地址，格式为 IPV4，如: 127.0.0.1
     currency:  "cny",
@@ -63,9 +63,9 @@ http.createServer(function (req, res) {
 
   virtuePay.parseHeaders(req.headers); // 把从客户端传上来的 Headers 传到这里
 
-  // 设置请求签名密钥，密钥对需要你自己用 openssl 工具生成，如何生成可以参考帮助中心：https://help.pingxx.com/article/123161；
+  // 设置请求签名密钥，密钥对需要你自己用 openssl 工具生成，如何生成可以参考帮助中心：https://help.virtuepay.cn/article/123161；
   // 生成密钥后，需要在代码中设置请求签名的私钥(rsa_private_key.pem)；
-  // 然后登录 [Dashboard](https://dashboard.pingxx.com)->点击右上角公司名称->开发信息->商户公钥（用于商户身份验证）
+  // 然后登录 [Dashboard](https://dashboard.virtuepay.cn)->点击右上角公司名称->开发信息->商户公钥（用于商户身份验证）
   // 将你的公钥复制粘贴进去并且保存->先启用 Test 模式进行测试->测试通过后启用 Live 模式
 
   // 设置你的私钥路径，用于请求的签名，对应的公钥请填写到 VirtuePay 管理平台

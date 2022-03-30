@@ -5,7 +5,7 @@
 virtuePay.orders.create({
   merchant_order_no: "12345678",// 推荐使用 8-20 位，要求数字或字母，不允许其他字符
   app: "APP_ID" ,
-  uid:   "123",// 支付使用的第三方支付渠道取值，请参考：https://www.pingxx.com/api#api-c-new
+  uid:   "123",// 支付使用的第三方支付渠道取值，请参考：https://www.virtuepay.cn/api#api-c-new
   amount:    100,//订单总金额, 人民币单位：分（如订单总金额为 1 元，此处请填 100）
   client_ip: "127.0.0.1",// 发起支付请求客户端的 IP 地址，格式为 IPV4，如: 127.0.0.1
   currency:  "cny",

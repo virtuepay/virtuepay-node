@@ -3,7 +3,7 @@
 ### 创建 recharge
 ``` js
 var order_no = new Date().getTime().toString().substr(0, 10);
-var channel = 'alipay_wap'; // 支付使用的第三方支付渠道取值，请参考：https://www.pingxx.com/api#api-c-new
+var channel = 'alipay_wap'; // 支付使用的第三方支付渠道取值，请参考：https://www.virtuepay.cn/api#api-c-new
 var params = {
   'user': 'user_test_02', // 充值目标用户 ID, 必传
   'user_fee': 10, // 用户充值收取的手续费，单位分，不得大于 amount，不可和 balance_bonus[amount] 同时传，默认 0。可选

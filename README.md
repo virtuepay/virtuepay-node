@@ -9,10 +9,7 @@ docs 接口文档
 nodejs 版本 4 及以上
 
 ## 安装
-`npm install virtuePay`  
-或者  
-下载源码后，在项目目录下运行 `npm install <path to virtuePay-nodejs>`  
-`<path to virtuePay-nodejs>` 为 `virtuePay-nodejs` 源码路径
+`npm install @virtuepay/virtuepay-node`
 
 ### 初始化
 ``` js
@@ -20,7 +17,7 @@ var virtuePay = require('virtuePay')('YOUR-KEY');
 ```
 
 ### 设置请求签名密钥
-密钥需要你自己生成，公钥请填写到 [VirtuePay Dashboard](https://dashboard.pingxx.com)  
+密钥需要你自己生成，公钥请填写到 [VirtuePay Dashboard](https://dashboard.virtuepay.cn)  
 设置你的私钥路径
 ``` js
 virtuePay.setPrivateKeyPath("/path/to/your_rsa_private_key.pem");
@@ -303,4 +300,4 @@ virtuePay.identification.identify(
 - [余额结算](docs/balance_settlement.md)
 - [查询银行卡信息](docs/card_info.md)
 
-**详细信息请参考 [API 文档](https://pingxx.com/document/api?node.js)。**
+**详细信息请参考 [API 文档](https://virtuepay.cn/document/api?node.js)。**

@@ -1,6 +1,6 @@
 'use strict';
 
-// api_key 获取方式：登录 [Dashboard](https://dashboard.pingxx.com) -> 点击管理平台右上角公司名称 -> 企业面板 -> 开发参数 -> Secret Key
+// api_key 获取方式：登录 [Dashboard](https://dashboard.virtuepay.cn) -> 点击管理平台右上角公司名称 -> 企业面板 -> 开发参数 -> Secret Key
 var API_KEY = '6913fa78c9fb484781e6617c5cb958b0';
 
 var virtuePay = require('../lib/virtuePay')(API_KEY);

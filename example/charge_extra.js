@@ -122,21 +122,21 @@ var channelExtraMap = {
     // 可选，设置是否通过手机端发起支付，值为  true 时调用手机 h5 支付页面，值为  false 时调用 PC 端支付页面，该参数默认值为  true 。
     'is_mobile': true,
 
-    // 可选，用户账号类型，取值只能为：BIZ。传参存在问题请参考 帮助中心：https://help.pingxx.com/article/1012535/。
+    // 可选，用户账号类型，取值只能为：BIZ。传参存在问题请参考 帮助中心：https://help.virtuepay.cn/article/1012535/。
     // 'user_type': 'BIZ',
 
-    // 可选，商户的用户账号。传参存在问题请参考 帮助中心：https://help.pingxx.com/article/1012535/。
+    // 可选，商户的用户账号。传参存在问题请参考 帮助中心：https://help.virtuepay.cn/article/1012535/。
     // 'user_id': 'YOUR_USER_ID'
   },
 
   yeepay_wap: {
-    // 必须，商品类别码，商品类别码参考链接 ：https://www.pingxx.com/ap//%E6%98%93%E5%AE%9D%E6%94%AF%E4%BB%98%E5%95%86%E5%93%81%E7%B1%BB%E5%9E%8B%E7%A0%81 。
+    // 必须，商品类别码，商品类别码参考链接 ：https://www.virtuepay.cn/ap//%E6%98%93%E5%AE%9D%E6%94%AF%E4%BB%98%E5%95%86%E5%93%81%E7%B1%BB%E5%9E%8B%E7%A0%81 。
     'product_category': '1',
 
     // 必须，用户标识,商户生成的用户账号唯一标识，最长 50 位字符串。
     'identity_id': 'IDENTITY_ID',
 
-    // 必须，用户标识类型，用户标识类型参考链接：https://www.pingxx.com/ap//%E6%98%93%E5%AE%9D%E6%94%AF%E4%BB%98%E7%94%A8%E6%88%B7%E6%A0%87%E8%AF%86%E7%B1%BB%E5%9E%8B%E7%A0%81 。
+    // 必须，用户标识类型，用户标识类型参考链接：https://www.virtuepay.cn/ap//%E6%98%93%E5%AE%9D%E6%94%AF%E4%BB%98%E7%94%A8%E6%88%B7%E6%A0%87%E8%AF%86%E7%B1%BB%E5%9E%8B%E7%A0%81 。
     'identity_type': 2,
 
     // 必须，终端类型，对应取值 0:IMEI, 1:MAC, 2:UUID, 3:other。
