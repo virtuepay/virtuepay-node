@@ -12,6 +12,7 @@
   "engines": {
     "node": ">=4"
   },
+  "license": "MIT",
   "main": "lib/virtuePay.js",
   "devDependencies": {
     "chai": "~1.8.0",
