@@ -2,7 +2,7 @@
 
 ### 支付
 ``` js
-pingpp.charges.create({
+virtuePay.charges.create({
   order_no:  "123456789",
   app:       { id: "APP_ID"},
   channel:   channel,
@@ -19,7 +19,7 @@ pingpp.charges.create({
 
 ### 查询
 ``` js
-pingpp.charges.retrieve(
+virtuePay.charges.retrieve(
   "CHARGE_ID",
   function(err, charge) {
     // YOUR CODE
@@ -27,7 +27,7 @@ pingpp.charges.retrieve(
 );
 ```
 ``` js
-pingpp.charges.list(
+virtuePay.charges.list(
   { limit: 5 },
   function(err, charges) {
     // YOUR CODE
@@ -37,7 +37,7 @@ pingpp.charges.list(
 
 ### 退款
 ``` js
-pingpp.charges.createRefund(
+virtuePay.charges.createRefund(
   "CHARGE_ID",
   { amount: 100, description: "Refund Description" },
   function(err, refund) {
@@ -48,7 +48,7 @@ pingpp.charges.createRefund(
 
 ### 退款查询
 ``` js
-pingpp.charges.retrieveRefund(
+virtuePay.charges.retrieveRefund(
   "CHARGE_ID",
   "REFUND_ID",
   function(err, refund) {
@@ -57,7 +57,7 @@ pingpp.charges.retrieveRefund(
 );
 ```
 ``` js
-pingpp.charges.listRefunds(
+virtuePay.charges.listRefunds(
   "CHARGE_ID",
   { limit: 5 },
   function(err, refunds) {

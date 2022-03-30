@@ -3,15 +3,15 @@ var API_KEY = '6913fa78c9fb484781e6617c5cb958b0';
 // app_id 获取方式：登录 [Dashboard](https://dashboard.pingxx.com)->点击你创建的应用->应用首页->应用 ID(App ID)
 var APP_ID = '5c3ea278d5f34a79bfe5819781905551';
 // 设置 api_key
-var pingpp = require('../../lib/pingpp')(API_KEY);
+var virtuePay = require('../../lib/virtuePay')(API_KEY);
 var path = require('path');
 
-pingpp.setPrivateKeyPath(path.join(__dirname, '../your_rsa_private_key.pem'));
+virtuePay.setPrivateKeyPath(path.join(__dirname, '../your_rsa_private_key.pem'));
 
 /**
  * 创建 settle_account
  */
-pingpp.settleAccounts.create(
+virtuePay.settleAccounts.create(
   APP_ID,
   'test_user_001', // User ID
   {
@@ -33,7 +33,7 @@ pingpp.settleAccounts.create(
 /**
  * 查询 settle_account
  */
-pingpp.settleAccounts.retrieve(
+virtuePay.settleAccounts.retrieve(
   APP_ID,
   '1477034484747', // User ID
   '320117061416423600014001', //  settle_account ID
@@ -48,7 +48,7 @@ pingpp.settleAccounts.retrieve(
 /**
  * 查询 settle_account 列表
  */
-pingpp.settleAccounts.list(
+virtuePay.settleAccounts.list(
   APP_ID,
   '1477034484747', // User ID
   { page: 1, per_page: 3 },
@@ -63,7 +63,7 @@ pingpp.settleAccounts.list(
 /**
  * 删除 settle_account
  */
-pingpp.settleAccounts.delete(
+virtuePay.settleAccounts.delete(
   APP_ID,
   '1477034484747', // User ID
   'SETTLE_ACCOUNT_ID', // settle_account ID

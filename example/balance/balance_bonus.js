@@ -3,10 +3,10 @@ var API_KEY = '6913fa78c9fb484781e6617c5cb958b0';
 // app_id 获取方式：登录 [Dashboard](https://dashboard.pingxx.com)->点击你创建的应用->应用首页->应用 ID(App ID)
 var APP_ID = '5c3ea278d5f34a79bfe5819781905551';
 // 设置 api_key
-var pingpp = require('../../lib/pingpp')(API_KEY);
+var virtuePay = require('../../lib/virtuePay')(API_KEY);
 var path = require('path');
 
-pingpp.setPrivateKeyPath(path.join(__dirname, '../your_rsa_private_key.pem'));
+virtuePay.setPrivateKeyPath(path.join(__dirname, '../your_rsa_private_key.pem'));
 
 /**
  * 创建余额赠送 balance_bonuses
@@ -18,9 +18,9 @@ var params_create = {
   'amount': 10, // 支付受赠余额，单位：分, 必传
   'description': 'Your Description' // 描述, 可选
 };
-pingpp.balanceBonuses.create(APP_ID, params_create, function(err, data) {
+virtuePay.balanceBonuses.create(APP_ID, params_create, function(err, data) {
   if (err != null){
-    console.log('pingpp.balanceBonuses.create fail:', err);
+    console.log('virtuePay.balanceBonuses.create fail:', err);
   }
   // YOUR CODE
 });
@@ -28,11 +28,11 @@ pingpp.balanceBonuses.create(APP_ID, params_create, function(err, data) {
 /**
  * 查询单个余额赠送 balance_bonuses
  */
-pingpp.balanceBonuses.retrieve(APP_ID,
+virtuePay.balanceBonuses.retrieve(APP_ID,
   "650170821521710018560001", // BalanceBonuses ID
   function(err, data) {
     if (err != null){
-      console.log('pingpp.balanceBonuses.retrieve fail:', err);
+      console.log('virtuePay.balanceBonuses.retrieve fail:', err);
     }
     // YOUR CODE
 });
@@ -44,9 +44,9 @@ var params_list = {
   'page': 1,
   'per_page': 3
 };
-pingpp.balanceBonuses.list(APP_ID, params_list, function(err, data) {
+virtuePay.balanceBonuses.list(APP_ID, params_list, function(err, data) {
   if (err != null){
-    console.log('pingpp.balanceBonuses.list fail:', err);
+    console.log('virtuePay.balanceBonuses.list fail:', err);
   }
   // YOUR CODE
 });

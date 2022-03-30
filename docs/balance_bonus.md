@@ -9,9 +9,9 @@ var params_create = {
   'amount': 10, // 支付受赠余额，单位：分, 必传
   'description': 'Your Description' // 描述, 可选
 };
-pingpp.balanceBonuses.create(APP_ID, params_create, function(err, data) {
+virtuePay.balanceBonuses.create(APP_ID, params_create, function(err, data) {
   if (err != null){
-    console.log('pingpp.balanceBonuses.create fail:', err);
+    console.log('virtuePay.balanceBonuses.create fail:', err);
   }
   // YOUR CODE
 });
@@ -20,11 +20,11 @@ pingpp.balanceBonuses.create(APP_ID, params_create, function(err, data) {
 
 ### 查询单个余额赠送
 ``` js
-pingpp.balanceBonuses.retrieve(APP_ID,
+virtuePay.balanceBonuses.retrieve(APP_ID,
   "650170821521710018560001", // BalanceBonuses ID
   function(err, data) {
     if (err != null){
-      console.log('pingpp.balanceBonuses.retrieve fail:', err);
+      console.log('virtuePay.balanceBonuses.retrieve fail:', err);
     }
     // YOUR CODE
 });
@@ -34,9 +34,9 @@ pingpp.balanceBonuses.retrieve(APP_ID,
 
 ### 查询余额赠送列表
 ``` js
-pingpp.balanceBonuses.list(APP_ID, {'page': 1, 'per_page': 3}, function(err, data) {
+virtuePay.balanceBonuses.list(APP_ID, {'page': 1, 'per_page': 3}, function(err, data) {
   if (err != null){
-    console.log('pingpp.balanceBonuses.list fail:', err);
+    console.log('virtuePay.balanceBonuses.list fail:', err);
   }
   // YOUR CODE
 });

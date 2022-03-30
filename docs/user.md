@@ -2,7 +2,7 @@
 
 ### 创建账户
 ``` js
-pingpp.users.create("APP_ID",{
+virtuePay.users.create("APP_ID",{
   "id": new Date().getTime().toString(),
   "address": null,
   "avatar": null,
@@ -18,7 +18,7 @@ pingpp.users.create("APP_ID",{
 
 ### 查询账户
 ``` js
-pingpp.users.retrieve(
+virtuePay.users.retrieve(
   "APP_ID",
   "USER_ID",
   function(err, user) {
@@ -26,7 +26,7 @@ pingpp.users.retrieve(
   }
 );
 
-pingpp.users.list(
+virtuePay.users.list(
   "APP_ID",
   {page: 1},
   function(err, users) {
@@ -37,7 +37,7 @@ pingpp.users.list(
 
 ### 更新账户
 ``` js
-pingpp.users.update(
+virtuePay.users.update(
   APP_ID,
   "USER_ID",  // 账户 ID
   {
@@ -51,7 +51,7 @@ pingpp.users.update(
   //"disabled":false  // 是否禁用。使用该参数时，不能同时使用其他参数。
 }, function(err, user) {
   if (err!=null){
-    console.log("pingpp.users.update fail:",err)
+    console.log("virtuePay.users.update fail:",err)
   }
   // YOUR CODE
 });

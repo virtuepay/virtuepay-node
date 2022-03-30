@@ -2,7 +2,7 @@
 
 ### 创建优惠券模板
 ``` js
-pingpp.couponTemplates.create(
+virtuePay.couponTemplates.create(
   "APP_ID",
   {
     "name": "25OFF", // 优惠券模板名称
@@ -21,7 +21,7 @@ pingpp.couponTemplates.create(
 
 ### 查询优惠券模板
 ``` js
-pingpp.couponTemplates.retrieve(
+virtuePay.couponTemplates.retrieve(
   "APP_ID", // APP ID
   "CT_ID", // 优惠券模板 id
   function(err, data) {
@@ -29,7 +29,7 @@ pingpp.couponTemplates.retrieve(
   }
 );
 
-pingpp.couponTemplates.list(
+virtuePay.couponTemplates.list(
   "APP_ID", // APP ID
   {page: 1},
   function(err, datas) {
@@ -40,7 +40,7 @@ pingpp.couponTemplates.list(
 
 ### 优惠券模板更新
 ``` js
-pingpp.couponTemplates.update(
+virtuePay.couponTemplates.update(
   APP_ID, // APP ID
   "CT_ID", // 优惠券模板 id
   {
@@ -56,7 +56,7 @@ pingpp.couponTemplates.update(
 
 ### 优惠券模板删除
 ``` js
-pingpp.couponTemplates.delete(
+virtuePay.couponTemplates.delete(
   APP_ID, // APP ID
   "CT_ID", // 优惠券模板 id
   function(err, data) {
@@ -67,7 +67,7 @@ pingpp.couponTemplates.delete(
 
 ###  批量创建优惠券
 ``` js
-pingpp.couponTemplates.createCoupon(
+virtuePay.couponTemplates.createCoupon(
   "APP_ID", // APP ID
   "CT_ID", // 优惠券模板 id
   {
@@ -84,7 +84,7 @@ pingpp.couponTemplates.createCoupon(
 
 ### 查询优惠券模板创建的优惠券列表
 ``` js
-pingpp.couponTemplates.listCoupons(
+virtuePay.couponTemplates.listCoupons(
   "APP_ID", // APP ID
   "CT_ID", // 优惠券模板 id
   {page: 1},

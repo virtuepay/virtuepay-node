@@ -1,18 +1,18 @@
-// Ping++ Server SDK
+// VirtuePay Server SDK
 // 说明：
 // 以下代码只是为了方便商户测试而提供的样例代码，商户可根据自己网站需求按照技术文档编写, 并非一定要使用该代码。
 // 接入红包流程参考开发者中心：https://www.pingxx.com/docs/server/red-envelope ，文档可筛选后端语言和接入渠道。
-// 该代码仅供学习和研究 Ping++ SDK 使用，仅供参考。
+// 该代码仅供学习和研究 VirtuePay SDK 使用，仅供参考。
 
 // api_key 获取方式：登录 [Dashboard](https://dashboard.pingxx.com)->点击管理平台右上角公司名称->开发信息-> Secret Key
 var API_KEY = "6913fa78c9fb484781e6617c5cb958b0"
 // app_id 获取方式：登录 [Dashboard](https://dashboard.pingxx.com)->点击你创建的应用->应用首页->应用 ID(App ID)
 var APP_ID = "5c3ea278d5f34a79bfe5819781905551"
 // 设置 api_key
-var pingpp = require('../lib/pingpp')(API_KEY);
+var virtuePay = require('../lib/virtuePay')(API_KEY);
 
 /* create a redEnvelope */
-pingpp.redEnvelopes.create({
+virtuePay.redEnvelopes.create({
   order_no:    new Date().getTime().toString(),// 红包使用的商户订单号。wx(新渠道)、wx_pub 规定为 1 ~ 28 位不能重复的数字
   app:         { id: APP_ID },
   channel:     "wx_pub",// 目前支持 wx(新渠道)、 wx_pub
@@ -30,22 +30,22 @@ pingpp.redEnvelopes.create({
 });
 
 /* retrieve a redEnvelope */
-pingpp.redEnvelopes.retrieve(
+virtuePay.redEnvelopes.retrieve(
   "red_Py9WTCL8GKe1n54KG0Km1av1",// 通过 Red_envelope 对象的 id 查询一个已创建的 Red_envelope 对象
   function(err, redEnvelope) {
     if (err != null) {
-      console.log("pingpp.redEnvelopes.retrieve fail:", err);
+      console.log("virtuePay.redEnvelopes.retrieve fail:", err);
     }
     // YOUR CODE
   }
 );
 
 /* list redEnvelopes */
-pingpp.redEnvelopes.list(
+virtuePay.redEnvelopes.list(
   { limit: 10 },
   function(err, redEnvelopes) {
     if (err != null) {
-      console.log("pingpp.redEnvelopes.list fail:", err);
+      console.log("virtuePay.redEnvelopes.list fail:", err);
     }
     // YOUR CODE
   }

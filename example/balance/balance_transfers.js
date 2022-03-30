@@ -3,10 +3,10 @@ var API_KEY = '6913fa78c9fb484781e6617c5cb958b0';
 // app_id 获取方式：登录 [Dashboard](https://dashboard.pingxx.com)->点击你创建的应用->应用首页->应用 ID(App ID)
 var APP_ID = '5c3ea278d5f34a79bfe5819781905551';
 // 设置 api_key
-var pingpp = require('../../lib/pingpp')(API_KEY);
+var virtuePay = require('../../lib/virtuePay')(API_KEY);
 var path = require('path');
 
-pingpp.setPrivateKeyPath(path.join(__dirname, '../your_rsa_private_key.pem'));
+virtuePay.setPrivateKeyPath(path.join(__dirname, '../your_rsa_private_key.pem'));
 
 /**
  * 创建余额转账 balance_transfer
@@ -20,9 +20,9 @@ var params_create = {
   'amount': 1, // 用户收到转账的余额，单位：分  必传
   'description': 'Balance transfer description.' // 描述 可选
 };
-pingpp.balanceTransfers.create(APP_ID, params_create, function(err, balanceTransfer) {
+virtuePay.balanceTransfers.create(APP_ID, params_create, function(err, balanceTransfer) {
   if (err != null){
-    console.log('pingpp.balanceTransfers.list fail:', err);
+    console.log('virtuePay.balanceTransfers.list fail:', err);
   }
   // YOUR CODE
 });
@@ -30,11 +30,11 @@ pingpp.balanceTransfers.create(APP_ID, params_create, function(err, balanceTrans
 /**
  * 查询单个余额转账 balance_transfer
  */
-pingpp.balanceTransfers.retrieve(APP_ID,
+virtuePay.balanceTransfers.retrieve(APP_ID,
   '660170829413280122880001', // BalanceTransfers ID
   function(err, balanceTransfer) {
     if (err != null){
-      console.log('pingpp.balanceTransfers.retrieve fail:', err);
+      console.log('virtuePay.balanceTransfers.retrieve fail:', err);
     }
     // YOUR CODE
 });
@@ -46,9 +46,9 @@ var params_list = {
   'page': 1,
   'per_page': 3
 };
-pingpp.balanceTransfers.list(APP_ID, params_list, function(err, data) {
+virtuePay.balanceTransfers.list(APP_ID, params_list, function(err, data) {
   if (err != null){
-    console.log('pingpp.balanceTransfers.list fail:', err);
+    console.log('virtuePay.balanceTransfers.list fail:', err);
   }
   // YOUR CODE
 });

@@ -3,15 +3,15 @@ var API_KEY = '6913fa78c9fb484781e6617c5cb958b0';
 // app_id 获取方式：登录 [Dashboard](https://dashboard.pingxx.com)->点击你创建的应用->应用首页->应用 ID(App ID)
 var APP_ID = '5c3ea278d5f34a79bfe5819781905551';
 // 设置 api_key
-var pingpp = require('../../lib/pingpp')(API_KEY);
+var virtuePay = require('../../lib/virtuePay')(API_KEY);
 var path = require('path');
 
-pingpp.setPrivateKeyPath(path.join(__dirname, '../your_rsa_private_key.pem'));
+virtuePay.setPrivateKeyPath(path.join(__dirname, '../your_rsa_private_key.pem'));
 
 /**
  * 创建分润模板对象
  */
-pingpp.royaltyTemplates.create(
+virtuePay.royaltyTemplates.create(
   {
     'app': APP_ID,                    // App ID, 必传
     'name': 'royalty_templates name', // 模板名称，允许中英文等常用字符, 可选
@@ -42,7 +42,7 @@ pingpp.royaltyTemplates.create(
 /**
  * 查询分润模板对象列表
  */
-pingpp.royaltyTemplates.list(
+virtuePay.royaltyTemplates.list(
   {
     page: 1,
     per_page: 3
@@ -58,7 +58,7 @@ pingpp.royaltyTemplates.list(
 /**
  * 查询单个分润模板对象
  */
-pingpp.royaltyTemplates.retrieve(
+virtuePay.royaltyTemplates.retrieve(
   '450170830143400001',  //  RoyaltyTemplates ID
   function(err, royaltyTemplate) {
     if (err != null){
@@ -71,7 +71,7 @@ pingpp.royaltyTemplates.retrieve(
 /**
  * 更新分润模板对象
  */
-pingpp.royaltyTemplates.update(
+virtuePay.royaltyTemplates.update(
   '450170830143400001', // RoyaltyTemplates ID
   {
     'name': 'royalty_templates name new',
@@ -102,7 +102,7 @@ pingpp.royaltyTemplates.update(
 /**
  * 删除分润模板对象
  */
-pingpp.royaltyTemplates.del(
+virtuePay.royaltyTemplates.del(
   '450170830143400001', // RoyaltyTemplates ID
   function(err, data) {
     if (err != null){

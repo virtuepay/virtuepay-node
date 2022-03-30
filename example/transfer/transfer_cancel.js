@@ -2,17 +2,17 @@
 var API_KEY = '6913fa78c9fb484781e6617c5cb958b0';
 
 // 设置 api_key
-var pingpp = require('../../lib/pingpp')(API_KEY);
+var virtuePay = require('../../lib/virtuePay')(API_KEY);
 var path = require('path');
 
-pingpp.setPrivateKeyPath(path.join(__dirname, '../your_rsa_private_key.pem'));
+virtuePay.setPrivateKeyPath(path.join(__dirname, '../your_rsa_private_key.pem'));
 
 /* 取消 */
-pingpp.transfers.cancel(
+virtuePay.transfers.cancel(
   'tr_uHWX58DanDOGCKOynHvPirfT',
   function(err, transfer) {
     if (err != null) {
-      console.log('pingpp.transfers.cancel failed: ', err);
+      console.log('virtuePay.transfers.cancel failed: ', err);
     } else {
       console.log(transfer);
     }

@@ -1,4 +1,4 @@
-# Pingpp Node.js SDK
+# VirtuePay Node.js SDK
 
 ## 简介
 lib 文件夹下是 Node.js SDK 文件，  
@@ -9,30 +9,30 @@ docs 接口文档
 nodejs 版本 4 及以上
 
 ## 安装
-`npm install pingpp`  
+`npm install virtuePay`  
 或者  
-下载源码后，在项目目录下运行 `npm install <path to pingpp-nodejs>`  
-`<path to pingpp-nodejs>` 为 `pingpp-nodejs` 源码路径
+下载源码后，在项目目录下运行 `npm install <path to virtuePay-nodejs>`  
+`<path to virtuePay-nodejs>` 为 `virtuePay-nodejs` 源码路径
 
 ### 初始化
 ``` js
-var pingpp = require('pingpp')('YOUR-KEY');
+var virtuePay = require('virtuePay')('YOUR-KEY');
 ```
 
 ### 设置请求签名密钥
-密钥需要你自己生成，公钥请填写到 [Ping++ Dashboard](https://dashboard.pingxx.com)  
+密钥需要你自己生成，公钥请填写到 [VirtuePay Dashboard](https://dashboard.pingxx.com)  
 设置你的私钥路径
 ``` js
-pingpp.setPrivateKeyPath("/path/to/your_rsa_private_key.pem");
+virtuePay.setPrivateKeyPath("/path/to/your_rsa_private_key.pem");
 ```
 也可以设置私钥内容
 ``` js
-pingpp.setPrivateKey("你的 RSA 私钥内容字符串");
+virtuePay.setPrivateKey("你的 RSA 私钥内容字符串");
 ```
 
 ### 支付
 ``` js
-pingpp.charges.create({
+virtuePay.charges.create({
   order_no:  "123456789",
   app:       { id: "APP_ID" },
   channel:   channel,
@@ -49,7 +49,7 @@ pingpp.charges.create({
 
 ### 查询
 ``` js
-pingpp.charges.retrieve(
+virtuePay.charges.retrieve(
   "CHARGE_ID",
   function(err, charge) {
     // YOUR CODE
@@ -57,7 +57,7 @@ pingpp.charges.retrieve(
 );
 ```
 ``` js
-pingpp.charges.list(
+virtuePay.charges.list(
   { limit: 5 },
   function(err, charges) {
     // YOUR CODE
@@ -67,7 +67,7 @@ pingpp.charges.list(
 
 ### 退款
 ``` js
-pingpp.charges.createRefund(
+virtuePay.charges.createRefund(
   "CHARGE_ID",
   { amount: 100, description: "Refund Description" },
   function(err, refund) {
@@ -78,7 +78,7 @@ pingpp.charges.createRefund(
 
 ### 退款查询
 ``` js
-pingpp.charges.retrieveRefund(
+virtuePay.charges.retrieveRefund(
   "CHARGE_ID",
   "REFUND_ID",
   function(err, refund) {
@@ -87,7 +87,7 @@ pingpp.charges.retrieveRefund(
 );
 ```
 ``` js
-pingpp.charges.listRefunds(
+virtuePay.charges.listRefunds(
   "CHARGE_ID",
   { limit: 5 },
   function(err, refunds) {
@@ -98,7 +98,7 @@ pingpp.charges.listRefunds(
 
 ### 红包
 ``` js
-pingpp.redEnvelopes.create({
+virtuePay.redEnvelopes.create({
   order_no:    "123456789",
   app:         { id: "APP_ID" },
   channel:     "wx_pub",
@@ -120,7 +120,7 @@ pingpp.redEnvelopes.create({
 ### 微信公众号获取签名
 如果使用微信 JS-SDK 来调起支付，需要在创建 `charge` 后，获取签名（`signature`），传给 HTML5 SDK。
 ``` js
-pingpp.wxOAuth.getJsapiTicket(wx_app_id, wx_app_secret, function(e, response){
+virtuePay.wxOAuth.getJsapiTicket(wx_app_id, wx_app_secret, function(e, response){
   var ticket = response['ticket'];
 });
 ```
@@ -128,16 +128,16 @@ pingpp.wxOAuth.getJsapiTicket(wx_app_id, wx_app_secret, function(e, response){
 
 _下面方法中 `url` 是当前网页的 URL，不包含`#`及其后面部分_
 ``` js
-var signature = pingpp.wxOAuth.getSignature(charge, ticket, url);
+var signature = virtuePay.wxOAuth.getSignature(charge, ticket, url);
 ```
 然后在 HTML5 SDK 里调用
 ``` js
-pingpp.createPayment(charge, callback, signature, false);
+virtuePay.createPayment(charge, callback, signature, false);
 ```
 
 ### Event 事件
 ``` js
-pingpp.events.retrieve(
+virtuePay.events.retrieve(
   "EVENT_ID",
   function(err, event) {
     // YOUR CODE
@@ -147,7 +147,7 @@ pingpp.events.retrieve(
 
 ### 企业付款
 ``` js
-pingpp.transfers.create({
+virtuePay.transfers.create({
   order_no:    "123456789",
   app:         { id: "APP_ID" },
   channel:     "wx_pub",
@@ -164,7 +164,7 @@ pingpp.transfers.create({
 ### 企业付款取消
 ``` js
 /* 企业付款取消 */
-pingpp.transfers.create({
+virtuePay.transfers.create({
   order_no:    "123456789",
   app:         { id: "APP_ID" },
   channel:     "unionpay",// 目前支持 wx(新渠道)、 wx_pub、 unionpay
@@ -179,14 +179,14 @@ pingpp.transfers.create({
   }
 }, function(err, transfer) {
   if (err) {
-    console.log("pingpp.transfers.create(unionpay) fail:",err)
+    console.log("virtuePay.transfers.create(unionpay) fail:",err)
     return
   }
-  pingpp.transfers.cancel(
+  virtuePay.transfers.cancel(
     transfer.id,
     function(err, transfers) {
       if (err) {
-        console.log("pingpp.transfers.cancel fail:",err)
+        console.log("virtuePay.transfers.cancel fail:",err)
       }
       // YOUR CODE
     }
@@ -196,7 +196,7 @@ pingpp.transfers.create({
 
 ### 企业付款查询
 ``` js
-pingpp.transfers.retrieve(
+virtuePay.transfers.retrieve(
   "TRANSFER_ID",
   function(err, transfer) {
     // YOUR CODE
@@ -204,7 +204,7 @@ pingpp.transfers.retrieve(
 );
 ```
 ``` js
-pingpp.transfers.list(
+virtuePay.transfers.list(
   { limit: 5 },
   function(err, transfers) {
     // YOUR CODE
@@ -214,7 +214,7 @@ pingpp.transfers.list(
 
 ### 企业批量付款
 ``` js
-pingpp.batchTransfers.create({
+virtuePay.batchTransfers.create({
   "app": "APP_ID" ,
   "batch_no": "123456789", // 批量付款批次号
   "channel": "alipay", // 目前只支持 alipay
@@ -241,7 +241,7 @@ pingpp.batchTransfers.create({
 ### 企业批量付款查询
 ``` js
 /* 查询 */
-pingpp.batchTransfers.retrieve(
+virtuePay.batchTransfers.retrieve(
   // 通过 Transfer 对象的 id 查询一个已创建的 Transfer 对象
   "181610181347533047",
   function(err, transfer) {
@@ -250,7 +250,7 @@ pingpp.batchTransfers.retrieve(
 );
 
 /* 查询列表 */
-pingpp.batchTransfers.list(
+virtuePay.batchTransfers.list(
   {page: 1},
   function(err, transfers) {
     // YOUR CODE
@@ -260,7 +260,7 @@ pingpp.batchTransfers.list(
 
 ### 身份证银行卡认证
 ``` js
-pingpp.identification.identify(
+virtuePay.identification.identify(
   {
     type: 'bank_card',
     app: 'APP_ID',

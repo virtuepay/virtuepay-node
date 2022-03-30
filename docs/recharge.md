@@ -18,9 +18,9 @@ var params = {
     'extra': {'success_url':'https://example.com/success'}  // extra: 根据不同渠道传入相应的参数
   }
 };
-pingpp.recharge.create(APP_ID, params, function(err, recharge) {
+virtuePay.recharge.create(APP_ID, params, function(err, recharge) {
   if (err!=null){
-    console.log('pingpp.recharge.create fail:',err)
+    console.log('virtuePay.recharge.create fail:',err)
   }
   // YOUR CODE
 });
@@ -29,11 +29,11 @@ pingpp.recharge.create(APP_ID, params, function(err, recharge) {
 
 ### 查询单个 recharge
 ``` js
-pingpp.recharge.retrieve(APP_ID,
+virtuePay.recharge.retrieve(APP_ID,
   '220170829596751616000001', // Recharge ID
   function(err, recharge) {
     if (err!=null){
-      console.log('pingpp.recharge.retrieve fail:',err)
+      console.log('virtuePay.recharge.retrieve fail:',err)
     }
     // YOUR CODE
 });
@@ -42,9 +42,9 @@ pingpp.recharge.retrieve(APP_ID,
 
 ### 查询 recharge 列表
 ``` js
-pingpp.recharge.list(APP_ID, {'page': 1, 'per_page': 3}, function(err, recharges) {
+virtuePay.recharge.list(APP_ID, {'page': 1, 'per_page': 3}, function(err, recharges) {
   if (err!=null){
-    console.log('pingpp.recharge.list fail:',err)
+    console.log('virtuePay.recharge.list fail:',err)
   }
   // YOUR CODE
 });

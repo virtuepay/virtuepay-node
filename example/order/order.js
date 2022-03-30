@@ -1,23 +1,23 @@
-// Ping++ Server SDK
+// VirtuePay Server SDK
 // 说明：
 // 以下代码只是为了方便商户测试而提供的样例代码，商户可根据自己网站需求按照技术文档编写, 并非一定要使用该代码。
 // API接入文档：https://www.pingxx.com ，文档可筛选后端语言和接入渠道。
-// 该代码仅供学习和研究 Ping++ SDK 使用，仅供参考。
+// 该代码仅供学习和研究 VirtuePay SDK 使用，仅供参考。
 
 // api_key 获取方式：登录 [Dashboard](https://dashboard.pingxx.com)->点击管理平台右上角公司名称->开发信息-> Secret Key
 var API_KEY = "6913fa78c9fb484781e6617c5cb958b0";
 // app_id 获取方式：登录 [Dashboard](https://dashboard.pingxx.com)->点击你创建的应用->应用首页->应用 ID(App ID)
 var APP_ID = "5c3ea278d5f34a79bfe5819781905551";
 // 设置 api_key
-var pingpp = require('../../lib/pingpp')(API_KEY);
+var virtuePay = require('../../lib/virtuePay')(API_KEY);
 var path = require('path');
 
-pingpp.setPrivateKeyPath(path.join(__dirname, '../your_rsa_private_key.pem'));
+virtuePay.setPrivateKeyPath(path.join(__dirname, '../your_rsa_private_key.pem'));
 
 /**
  * 创建订单
  */
-pingpp.orders.create({
+virtuePay.orders.create({
   merchant_order_no: new Date().getTime().toString(),// 推荐使用 8-20 位，要求数字或字母，不允许其他字符
   app: APP_ID ,// APP ID
   uid:   "123",// 支付使用的第三方支付渠道取值，请参考：https://www.pingxx.com/api#api-c-new
@@ -28,7 +28,7 @@ pingpp.orders.create({
   body:      "Your Body"
 }, function(err, order) {
   if (err!=null){
-    console.log("pingpp.orders.create fail:",err)
+    console.log("virtuePay.orders.create fail:",err)
   }
   // YOUR CODE
 });
@@ -36,11 +36,11 @@ pingpp.orders.create({
 /**
  * 查询 order 列表
  */
-pingpp.orders.list(
+virtuePay.orders.list(
   { page: 1 ,app:APP_ID},
   function(err, order) {
     if (err!=null){
-      console.log("pingpp.orders.retrieve fail:",err)
+      console.log("virtuePay.orders.retrieve fail:",err)
     }
     // YOUR CODE
   }
@@ -49,12 +49,12 @@ pingpp.orders.list(
 /**
  * 查询单个 order
  */
-pingpp.orders.retrieve(
+virtuePay.orders.retrieve(
   // 通过 order 对象的 id 查询一个已创建的 order 对象
   "2001709010000002851",// ORDER ID
   function(err, order) {
     if (err!=null){
-      console.log("pingpp.orders.retrieve fail:",err)
+      console.log("virtuePay.orders.retrieve fail:",err)
     }
     // YOUR CODE
   }
@@ -68,7 +68,7 @@ pingpp.orders.retrieve(
 var charge_extra = require('../charge_extra');
 var channel = 'alipay'; // 支付使用的第三方支付渠道取值，请参考：https://www.pingxx.com/api#api-c-new
 var extra = charge_extra(channel);
-pingpp.orders.pay(
+virtuePay.orders.pay(
   "2001709010000002851",
   {
     "channel": channel, // 支付渠道
@@ -77,7 +77,7 @@ pingpp.orders.pay(
   },
   function(err, order) {
     if (err!=null){
-      console.log("pingpp.orders.pay fail:",err)
+      console.log("virtuePay.orders.pay fail:",err)
     }
     // YOUR CODE
   }
@@ -86,12 +86,12 @@ pingpp.orders.pay(
 /**
  * 查询订单中 Charge 对象
  */
-pingpp.orders.retrieveCharge(
+virtuePay.orders.retrieveCharge(
   "2001708220000221911",          //  orderId
   "ch_88mbTKu9mbn9mfT4KSCiHiX5",  // chargeId
   function(err, charge) {
     if (err!=null){
-      console.log("pingpp.orders.retrieveCharge fail:",err)
+      console.log("virtuePay.orders.retrieveCharge fail:",err)
     }
     // YOUR CODE
   }
@@ -100,12 +100,12 @@ pingpp.orders.retrieveCharge(
 /**
  * 查询订单中 Charge 列表
  */
-pingpp.orders.listCharges(
+virtuePay.orders.listCharges(
   "2001708220000221911",          //  orderId
   {'page': 1, 'per_page':3},
   function(err, charges) {
     if (err!=null){
-      console.log("pingpp.orders.listCharges fail:",err)
+      console.log("virtuePay.orders.listCharges fail:",err)
     }
     // YOUR CODE
   }
@@ -114,7 +114,7 @@ pingpp.orders.listCharges(
 /**
  * 创建订单->取消订单
  */
-pingpp.orders.create({
+virtuePay.orders.create({
   merchant_order_no: new Date().getTime().toString(),// 推荐使用 8-20 位，要求数字或字母，不允许其他字符
   app: APP_ID ,
   uid:   "123",// 支付使用的第三方支付渠道取值，请参考：https://www.pingxx.com/api#api-c-new
@@ -125,14 +125,14 @@ pingpp.orders.create({
   body:      "Your Body" // 商品的描述信息
 }, function(err, order) {
   if (err!=null){
-    console.log("pingpp.orders.create fail:",err)
+    console.log("virtuePay.orders.create fail:",err)
   }
   /* 取消订单 */
-  pingpp.orders.cancel(
+  virtuePay.orders.cancel(
     order.id,
     function(err, order) {
       if (err!=null){
-        console.log("pingpp.orders.cancel fail:",err)
+        console.log("virtuePay.orders.cancel fail:",err)
       }
       // YOUR CODE
      }

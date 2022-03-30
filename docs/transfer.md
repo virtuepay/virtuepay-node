@@ -2,7 +2,7 @@
 
 ### 创建企业付款
 ``` js
-pingpp.transfers.create({
+virtuePay.transfers.create({
   order_no:    new Date().getTime().toString(),
   app:         { id: APP_ID },
   channel:     "wx_pub",// 目前支持 wx(新渠道)、 wx_pub
@@ -19,11 +19,11 @@ pingpp.transfers.create({
 ### 企业付款取消
 ``` js
 /* 企业付款取消 */
-pingpp.transfers.cancel(
+virtuePay.transfers.cancel(
   transfer.id,
   function(err, transfers) {
     if (err!=null){
-      console.log("pingpp.transfers.cancel fail:",err)
+      console.log("virtuePay.transfers.cancel fail:",err)
     }
     // YOUR CODE
   }
@@ -32,7 +32,7 @@ pingpp.transfers.cancel(
 
 ### 企业付款查询
 ``` js
-pingpp.transfers.retrieve(
+virtuePay.transfers.retrieve(
   "TRANSFER_ID", // TRANSFER ID
   function(err, transfer) {
     // YOUR CODE
@@ -41,7 +41,7 @@ pingpp.transfers.retrieve(
 ```
 
 ``` js
-pingpp.transfers.list(
+virtuePay.transfers.list(
   { limit: 5 },
   function(err, transfers) {
     // YOUR CODE

@@ -2,7 +2,7 @@
 
 ### 创建分润模板对象
 ``` js
-pingpp.royaltyTemplates.create(
+virtuePay.royaltyTemplates.create(
   {
     'app': APP_ID,                    // App ID, 必传
     'name': 'royalty_templates name', // 模板名称，允许中英文等常用字符, 可选
@@ -34,7 +34,7 @@ pingpp.royaltyTemplates.create(
 
 ### 查询单个分润模板对象
 ``` js
-pingpp.royaltyTemplates.retrieve(
+virtuePay.royaltyTemplates.retrieve(
   '450170830143400001',  //  RoyaltyTemplates ID
   function(err, royaltyTemplate) {
     if (err != null){
@@ -48,7 +48,7 @@ pingpp.royaltyTemplates.retrieve(
 
 ### 查询分润模板对象列表
 ``` js
-pingpp.royaltyTemplates.list(
+virtuePay.royaltyTemplates.list(
   {
     page: 1,
     per_page: 3
@@ -65,7 +65,7 @@ pingpp.royaltyTemplates.list(
 
 ### 更新分润模板对象
 ``` js
-pingpp.royaltyTemplates.update(
+virtuePay.royaltyTemplates.update(
   '450170830143400001', // RoyaltyTemplates ID
   {
     'name': 'royalty_templates name new',
@@ -97,7 +97,7 @@ pingpp.royaltyTemplates.update(
 
 ### 删除分润模板对象
 ``` js
-pingpp.royaltyTemplates.del(
+virtuePay.royaltyTemplates.del(
   '450170830143400001', // RoyaltyTemplates ID
   function(err, data) {
     if (err != null){

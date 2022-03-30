@@ -2,7 +2,7 @@
 
 ### 用户发起余额提现
 ``` js
-pingpp.withdrawals.create(
+virtuePay.withdrawals.create(
   "APP_ID", // App ID
   {
     "user": "USER_ID", // 用户 ID
@@ -25,14 +25,14 @@ pingpp.withdrawals.create(
 
 ### 查询账户提现
 ``` js
-pingpp.withdrawals.list(
+virtuePay.withdrawals.list(
   APP_ID, // App ID
   function(err, user) {
     // YOUR CODE
   }
 );
 
-pingpp.withdrawals.retrieve(
+virtuePay.withdrawals.retrieve(
   "APP_ID", // App ID
   "WITHDRAWA_ID",
   function(err, user) {
@@ -43,7 +43,7 @@ pingpp.withdrawals.retrieve(
 
 ### 账户提现撤销
 ``` js
-pingpp.withdrawals.cancel(
+virtuePay.withdrawals.cancel(
   "APP_ID", // App ID
   "WITHDRAWA_ID",
   function(err, user) {

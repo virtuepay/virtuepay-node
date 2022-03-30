@@ -2,7 +2,7 @@
 
 ### 发送优惠券
 ``` js
-pingpp.coupons.create(
+virtuePay.coupons.create(
   "APP_ID", // App ID
   "USER_ID", // 用户 ID,
   {
@@ -17,7 +17,7 @@ pingpp.coupons.create(
 
 ### 查看优惠券
 ``` js
-pingpp.coupons.retrieve(
+virtuePay.coupons.retrieve(
   "APP_ID", // App ID
   "USER_ID", // 用户 ID
   "COUPON_ID",
@@ -29,7 +29,7 @@ pingpp.coupons.retrieve(
 
 ### 查询账户优惠券列表
 ``` js
-pingpp.coupons.list(
+virtuePay.coupons.list(
   "APP_ID", // App ID
   "USER_ID", // 用户 ID
   {page: 1},
@@ -41,7 +41,7 @@ pingpp.coupons.list(
 
 ### 更新账户优惠券
 ``` js
-pingpp.coupons.update(
+virtuePay.coupons.update(
   APP_ID, // App ID
   "123", // 用户 ID
   "1477034484747",// 优惠券 ID
@@ -58,7 +58,7 @@ pingpp.coupons.update(
 
 ### 删除账户优惠券
 ``` js
-pingpp.coupons.delete(
+virtuePay.coupons.delete(
   APP_ID, // App ID
   "123", // 用户 ID
   "1477034484747",// 优惠券 ID

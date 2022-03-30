@@ -11,9 +11,9 @@ var params_create = {
   'amount': 1, // 用户收到转账的余额，单位：分  必传
   'description': 'Balance transfer description.' // 描述 可选
 };
-pingpp.balanceTransfers.create(APP_ID, params_create, function(err, balanceTransfer) {
+virtuePay.balanceTransfers.create(APP_ID, params_create, function(err, balanceTransfer) {
   if (err != null){
-    console.log('pingpp.balanceTransfers.list fail:', err);
+    console.log('virtuePay.balanceTransfers.list fail:', err);
   }
   // YOUR CODE
 });
@@ -22,11 +22,11 @@ pingpp.balanceTransfers.create(APP_ID, params_create, function(err, balanceTrans
 
 ### 查询单个余额转账
 ``` js
-pingpp.balanceTransfers.retrieve(APP_ID,
+virtuePay.balanceTransfers.retrieve(APP_ID,
   '660170829413280122880001', // BalanceTransfers ID
   function(err, balanceTransfer) {
     if (err != null){
-      console.log('pingpp.balanceTransfers.retrieve fail:', err);
+      console.log('virtuePay.balanceTransfers.retrieve fail:', err);
     }
     // YOUR CODE
 });
@@ -36,9 +36,9 @@ pingpp.balanceTransfers.retrieve(APP_ID,
 
 ### 查询余额转账列表
 ``` js
-pingpp.balanceTransfers.list(APP_ID, {'page': 1, 'per_page': 3}, function(err, data) {
+virtuePay.balanceTransfers.list(APP_ID, {'page': 1, 'per_page': 3}, function(err, data) {
   if (err != null){
-    console.log('pingpp.balanceTransfers.list fail:', err);
+    console.log('virtuePay.balanceTransfers.list fail:', err);
   }
   // YOUR CODE
 });

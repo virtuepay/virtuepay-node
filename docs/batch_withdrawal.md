@@ -2,7 +2,7 @@
 
 ### 批量确认提现确认
 ``` js
-pingpp.batchWithdrawals.create(
+virtuePay.batchWithdrawals.create(
   APP_ID, // App ID
   {
     "withdrawals": [
@@ -12,7 +12,7 @@ pingpp.batchWithdrawals.create(
   },
   function(err, data) {
     if (err!=null){
-      console.log("pingpp.batchWithdrawals.create fail:",err)
+      console.log("virtuePay.batchWithdrawals.create fail:",err)
     }
     // YOUR CODE
   }
@@ -22,7 +22,7 @@ pingpp.batchWithdrawals.create(
 
 ### 批量确认提现查询
 ``` js
-pingpp.batchWithdrawals.retrieve(
+virtuePay.batchWithdrawals.retrieve(
   APP_ID, // App ID
   "1901611151015122025", // 批量提现 ID
   function(err, data) {

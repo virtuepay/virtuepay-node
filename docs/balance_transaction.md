@@ -2,7 +2,7 @@
 
 ### 查询账户余额明细
 ``` js
-pingpp.balanceTransactions.list(
+virtuePay.balanceTransactions.list(
   APP_ID,
   { page: 1 },
   function(err, datas) {
@@ -10,7 +10,7 @@ pingpp.balanceTransactions.list(
   }
 );
 
-pingpp.balanceTransactions.retrieve(
+virtuePay.balanceTransactions.retrieve(
   APP_ID,
   "1477034484747", // Transaction ID
   function(err, data) {

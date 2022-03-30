@@ -2,7 +2,7 @@
 
 ### 创建海关报关
 ``` js
-pingpp.customs.create({
+virtuePay.customs.create({
   app: APP_ID ,
   charge: "ch_bLWP80Ci9S4ODaXLSKLOGe5S", // CHARGE ID
   channel: "upacp", // 支付渠道
@@ -20,7 +20,7 @@ pingpp.customs.create({
   }
 }, function(err, transfer) {
   if (err!=null){
-    console.log("pingpp.transfers.create fail:",err)
+    console.log("virtuePay.transfers.create fail:",err)
   }
   // YOUR CODE
 });
@@ -28,11 +28,11 @@ pingpp.customs.create({
 
 ### 海关报关查询
 ``` js
-pingpp.customs.retrieve(
+virtuePay.customs.retrieve(
   "14201609291525440636", // CUSTOMS ID
   function(err, transfer) {
     if (err!=null){
-      console.log("pingpp.transfers.retrieve fail:",err)
+      console.log("virtuePay.transfers.retrieve fail:",err)
     }
     // YOUR CODE
   }

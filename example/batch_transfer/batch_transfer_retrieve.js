@@ -2,20 +2,20 @@
 var API_KEY = '6913fa78c9fb484781e6617c5cb958b0';
 
 // 设置 api_key
-var pingpp = require('../../lib/pingpp')(API_KEY);
+var virtuePay = require('../../lib/virtuePay')(API_KEY);
 var path = require('path');
 
-pingpp.setPrivateKeyPath(path.join(__dirname, '../your_rsa_private_key.pem'));
+virtuePay.setPrivateKeyPath(path.join(__dirname, '../your_rsa_private_key.pem'));
 
 /**
  * 查询单个
  */
-pingpp.batchTransfers.retrieve(
+virtuePay.batchTransfers.retrieve(
   // 通过 Transfer 对象的 id 查询一个已创建的 Transfer 对象
   '1801708311830114137',
   function(err, batchTransfer) {
     if (err != null) {
-      console.log('pingpp.batchTransfers.retrieve failed: ', err);
+      console.log('virtuePay.batchTransfers.retrieve failed: ', err);
     } else {
       console.log(batchTransfer);
     }

@@ -2,7 +2,7 @@
 
 ## 微信公众号获取 openid
 ```js
-pingpp.wxOAuth.getWxPubOpenid(
+virtuePay.wxOAuth.getWxPubOpenid(
   '<WX_PUB_APP_ID>', '<WX_PUB_APP_SECRET>', '<CODE>',
   function(err, res) {
     if (err) {
@@ -23,7 +23,7 @@ pingpp.wxOAuth.getWxPubOpenid(
 
 ## 微信小程序获取 openid 和 session_key
 ```js
-pingpp.wxOAuth.getWxLiteOpenid(
+virtuePay.wxOAuth.getWxLiteOpenid(
   '<WX_LITE_APP_ID>', '<WX_LITE_APP_SECRET>', '<CODE>',
   function(err, res) {
     if (err) {
@@ -45,7 +45,7 @@ pingpp.wxOAuth.getWxLiteOpenid(
 ## 微信公众号获取签名
 如果使用微信 JS-SDK 来调起支付，需要在创建 `charge` 后，获取签名（`signature`），传给 HTML5 SDK。
 ``` js
-pingpp.wxOAuth.getJsapiTicket(
+virtuePay.wxOAuth.getJsapiTicket(
   '<WX_PUB_APP_ID>', '<WX_PUB_APP_SECRET>',
   function(e, response){
     var ticket = response['ticket'];
@@ -56,10 +56,10 @@ pingpp.wxOAuth.getJsapiTicket(
 
 _下面方法中 `url` 是当前网页的 URL，不包含`#`及其后面部分_
 ``` js
-var signature = pingpp.wxOAuth.getSignature(charge, ticket, url);
+var signature = virtuePay.wxOAuth.getSignature(charge, ticket, url);
 ```
 
 然后在 HTML5 SDK 里调用
 ``` js
-pingpp.createPayment(charge, callback, signature, false);
+virtuePay.createPayment(charge, callback, signature, false);
 ```

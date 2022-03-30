@@ -2,7 +2,7 @@
 
 ### 企业批量付款
 ``` js
-pingpp.batchTransfers.create({
+virtuePay.batchTransfers.create({
   "app": "APP_ID",
   "batch_no": "123456789", // 批量付款批次号
   "channel": "alipay", // 目前只支持 alipay
@@ -29,7 +29,7 @@ pingpp.batchTransfers.create({
 ### 企业批量付款查询
 ``` js
 /* 查询 */
-pingpp.batchTransfers.retrieve(
+virtuePay.batchTransfers.retrieve(
   // 通过 Transfer 对象的 id 查询一个已创建的 Transfer 对象
   "181610181347533047",
   function(err, transfer) {
@@ -38,7 +38,7 @@ pingpp.batchTransfers.retrieve(
 );
 
 /* 查询列表 */
-pingpp.batchTransfers.list(
+virtuePay.batchTransfers.list(
   {page: 1},
   function(err, transfers) {
     // YOUR CODE

@@ -2,7 +2,7 @@
 
 ### 创建订单
 ``` js 
-pingpp.orders.create({
+virtuePay.orders.create({
   merchant_order_no: "12345678",// 推荐使用 8-20 位，要求数字或字母，不允许其他字符
   app: "APP_ID" ,
   uid:   "123",// 支付使用的第三方支付渠道取值，请参考：https://www.pingxx.com/api#api-c-new
@@ -18,14 +18,14 @@ pingpp.orders.create({
 
 ### 查询订单
 ``` js
-pingpp.orders.list(
+virtuePay.orders.list(
   { page: 1 ,app:"APP_ID"},
   function(err, order) {
     // YOUR CODE
   }
 );
 
-pingpp.orders.retrieve(
+virtuePay.orders.retrieve(
   // 通过 order 对象的 id 查询一个已创建的 order 对象
   "ORDER_ID",
   function(err, order) {
@@ -36,7 +36,7 @@ pingpp.orders.retrieve(
 
 ### 标记订单为支付状态
 ``` js
-pingpp.orders.pay(
+virtuePay.orders.pay(
   "ORDER_ID",
   {
     "channel":"alipay",
@@ -50,7 +50,7 @@ pingpp.orders.pay(
 
 ### 取消订单 */
 ``` js
-pingpp.orders.cancel(
+virtuePay.orders.cancel(
   order.id,
   function(err, order) {
     // YOUR CODE
@@ -60,7 +60,7 @@ pingpp.orders.cancel(
 
 ### 订单退款
 ``` js
-pingpp.orders.createRefund(
+virtuePay.orders.createRefund(
   "ORDER_ID",
   {
     "description":"test-refund"
@@ -73,7 +73,7 @@ pingpp.orders.createRefund(
 
 ### 查询订单退款
 ``` js
-pingpp.orders.retrieveRefund(
+virtuePay.orders.retrieveRefund(
   "ORDER_ID",
   "REFUND_ID",
   function(err, order) {
@@ -85,12 +85,12 @@ pingpp.orders.retrieveRefund(
 
 ### 查询订单中 Charge 对象
 ``` js
-pingpp.orders.retrieveCharge(
+virtuePay.orders.retrieveCharge(
   "2001708220000221911",          //  orderId
   "ch_88mbTKu9mbn9mfT4KSCiHiX5",  // chargeId
   function(err, charge) {
     if (err!=null){
-      console.log("pingpp.orders.retrieveCharge fail:",err)
+      console.log("virtuePay.orders.retrieveCharge fail:",err)
     }
     // YOUR CODE
   }
@@ -100,12 +100,12 @@ pingpp.orders.retrieveCharge(
 
 ### 查询订单中 Charge 列表
 ``` js
-pingpp.orders.listCharges(
+virtuePay.orders.listCharges(
   "2001708220000221911",          //  orderId
   {'page': 1, 'per_page':3},
   function(err, charges) {
     if (err!=null){
-      console.log("pingpp.orders.listCharges fail:",err)
+      console.log("virtuePay.orders.listCharges fail:",err)
     }
     // YOUR CODE
   }

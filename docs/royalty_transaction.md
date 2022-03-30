@@ -2,7 +2,7 @@
 
 ### 查询分润结算明细列表
 ``` js
-pingpp.royaltyTransactions.list(
+virtuePay.royaltyTransactions.list(
   { page: 1, per_page: 3 },
   function(err, data) {
     // YOUR CODE
@@ -17,7 +17,7 @@ pingpp.royaltyTransactions.list(
 
 ### 查询分润结算明细
 ``` js
-pingpp.royaltyTransactions.retrieve(
+virtuePay.royaltyTransactions.retrieve(
   '441170612143400001', // royaltyTransactions ID
   function(err, data) {
     // YOUR CODE

@@ -2,7 +2,7 @@
 
 ### 创建分润结算对象
 ``` js
-pingpp.royaltySettlements.create(
+virtuePay.royaltySettlements.create(
   {
     'payer_app': APP_ID,       // 分润发起方所在应用的 id, 必传
     'method': 'unionpay',     // 分润的方式，余额 balance 或渠道名称，例如 alipay, 必传
@@ -25,7 +25,7 @@ pingpp.royaltySettlements.create(
 
 ### 查询分润结算对象列表
 ``` js
-pingpp.royaltySettlements.list(
+virtuePay.royaltySettlements.list(
   {
     payer_app: APP_ID, // payer_app 必传
     page: 1,
@@ -43,7 +43,7 @@ pingpp.royaltySettlements.list(
 
 ### 查询分润结算对象
 ``` js
-pingpp.royaltySettlements.retrieve(
+virtuePay.royaltySettlements.retrieve(
   '431170401120500001', // royaltySettlements ID
   function(err, data) {
     // YOUR CODE
@@ -57,7 +57,7 @@ pingpp.royaltySettlements.retrieve(
 
 ### 取消分润结算对象
 ``` js
-pingpp.royaltyTemplates.update(
+virtuePay.royaltyTemplates.update(
   '450170830143400001', // RoyaltyTemplates ID
   {
     'name': 'royalty_templates name new',
@@ -89,7 +89,7 @@ pingpp.royaltyTemplates.update(
 
 ### 更新分润结算对象
 ``` js
-pingpp.royaltySettlements.update(
+virtuePay.royaltySettlements.update(
   '431170401120500001', // royaltySettlements ID
   {'status': 'canceled'}, // 需要更新的状态  [pending, canceled]
   function(err, data) {

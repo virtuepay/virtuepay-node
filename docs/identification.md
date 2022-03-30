@@ -1,7 +1,7 @@
 # 身份证银行卡认证
 
 ``` js
-pingpp.identification.identify(
+virtuePay.identification.identify(
   {
     type: 'bank_card',
     app: 'APP_ID',

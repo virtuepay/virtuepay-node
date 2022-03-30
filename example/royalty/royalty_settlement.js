@@ -3,15 +3,15 @@ var API_KEY = '6913fa78c9fb484781e6617c5cb958b0';
 // app_id 获取方式：登录 [Dashboard](https://dashboard.pingxx.com)->点击你创建的应用->应用首页->应用 ID(App ID)
 var APP_ID = '5c3ea278d5f34a79bfe5819781905551';
 // 设置 api_key
-var pingpp = require('../../lib/pingpp')(API_KEY);
+var virtuePay = require('../../lib/virtuePay')(API_KEY);
 var path = require('path');
 
-pingpp.setPrivateKeyPath(path.join(__dirname, '../your_rsa_private_key.pem'));
+virtuePay.setPrivateKeyPath(path.join(__dirname, '../your_rsa_private_key.pem'));
 
 /**
  * 创建分润结算对象
  */
-pingpp.royaltySettlements.create(
+virtuePay.royaltySettlements.create(
   {
     'payer_app': APP_ID,       // 分润发起方所在应用的 id, 必传
     'method': 'unionpay',     // 分润的方式，余额 balance 或渠道名称，例如 alipay, 必传
@@ -33,7 +33,7 @@ pingpp.royaltySettlements.create(
 /**
  * 查询分润结算对象列表
  */
-pingpp.royaltySettlements.list(
+virtuePay.royaltySettlements.list(
   {
     payer_app: APP_ID, // payer_app 必传
     page: 1,
@@ -50,7 +50,7 @@ pingpp.royaltySettlements.list(
 /**
  * 查询分润结算对象
  */
-pingpp.royaltySettlements.retrieve(
+virtuePay.royaltySettlements.retrieve(
   '431170401120500001', // royaltySettlements ID
   function(err, data) {
     // YOUR CODE
@@ -63,7 +63,7 @@ pingpp.royaltySettlements.retrieve(
 /**
  * 取消分润结算对象
  */
-pingpp.royaltySettlements.cancel(
+virtuePay.royaltySettlements.cancel(
   '431170401120500001', // royaltySettlements ID
   function(err, data) {
     // YOUR CODE
@@ -76,7 +76,7 @@ pingpp.royaltySettlements.cancel(
 /**
  * 更新分润结算对象
  */
-pingpp.royaltySettlements.update(
+virtuePay.royaltySettlements.update(
   '431170401120500001', // royaltySettlements ID
   {'status': 'canceled'}, // 需要更新的状态  [pending, canceled]
   function(err, data) {

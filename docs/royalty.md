@@ -2,7 +2,7 @@
 
 ### 批量更新分润对象
 ``` js
-pingpp.royalties.batchUpdate(
+virtuePay.royalties.batchUpdate(
   {
     'ids': ['411170614151400001'],    // 分润 ID 列表, 必传
     'method': null,                   // 手动标记结算: manual 或 取消手动标记结算：null, 可选
@@ -20,7 +20,7 @@ pingpp.royalties.batchUpdate(
 
 ### 查询分润对象
 ``` js
-pingpp.royalties.retrieve(
+virtuePay.royalties.retrieve(
   '411170614151400001', // royalties ID
   function(err, data) {
     // YOUR CODE
@@ -34,7 +34,7 @@ pingpp.royalties.retrieve(
 
 ### 查询分润对象列表
 ``` js
-pingpp.royalties.list(
+virtuePay.royalties.list(
   { page: 1, per_page: 3 },
   function(err, data) {
     // YOUR CODE

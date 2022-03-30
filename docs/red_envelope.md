@@ -1,6 +1,6 @@
 # 红包
 ``` js
-pingpp.redEnvelopes.create({
+virtuePay.redEnvelopes.create({
   order_no:    "123456789",
   app:         { id: "APP_ID" },
   channel:     "wx_pub",
