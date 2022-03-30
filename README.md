@@ -13,7 +13,7 @@ nodejs 版本 4 及以上
 
 ### 初始化
 ``` js
-var virtuePay = require('virtuePay')('YOUR-KEY');
+var virtuePay = require('@virtuepay/virtuepay-node`')('YOUR-KEY');
 ```
 
 ### 设置请求签名密钥
