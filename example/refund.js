@@ -8,14 +8,15 @@
 var API_KEY = "6913fa78c9fb484781e6617c5cb958b0"
 // 设置 api_key
 var virtuePay = require('../lib/virtuePay')(API_KEY);
+virtuePay.setPrivateKeyPath(__dirname + '/your_rsa_private_key.pem');
 
 virtuePay.setTimeout(60000)
 
 // 通过发起一次退款请求创建一个新的 refund 对象，只能对已经发生交易并且没有全额退款的 charge 对象发起退款
 virtuePay.charges.createRefund(
-  "53405223260160",
+  "59953666363392",
   // amount 为退款的金额, 单位为对应币种的最小货币单位，例如：人民币为分（如退款金额为 1 元，此处请填 100）。必须小于等于可退款金额，默认为全额退款
-  { amount: 1, description: "测试XPay退款" },
+  { amount: 1, description: "VirtuePay退款" },
   function(err, refund) {
     if (err != null) {
       console.log("virtuePay.charges.createRefund fail:", err);

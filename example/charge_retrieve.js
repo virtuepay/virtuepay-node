@@ -19,7 +19,7 @@ virtuePay.setPrivateKeyPath(__dirname + '/your_rsa_private_key.pem');
 // -----END RSA PRIVATE KEY-----');
 
 virtuePay.charges.retrieve(
-  '53399021719552',
+  '59953666363392',
   function(err, charge) {
     if (err != null){
       console.log('virtuePay.charges.retrieve failed: ', err);

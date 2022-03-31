@@ -10,7 +10,9 @@ done
 DIR="$(cd -P "$(dirname "$SOURCE")" && pwd)"
 
 FILENAME=(
-    "charge_create.js"
+    # "charge_create.js"
+    "charge_retrieve.js"
+    # "charge_list.js"
     # "balance_bonus.js"
     # "balance_transfers.js"
     # "balance_transactions.js"

@@ -41,8 +41,8 @@ virtuePay.charges.create({
   amount:    1, //订单总金额, 人民币单位：分（如订单总金额为 1 元，此处请填 100）
   client_ip: '183.14.133.149', // 发起支付请求客户端的 IP 地址，格式为 IPV4，如: 127.0.0.1
   currency:  'cny',
-  subject:   '测试XPay支付',
-  body:      '测试XPay支付',
+  subject:   'VirtuePay支付',
+  body:      'VirtuePay支付',
   extra:     extra
 }, function(err, charge) {
   if (err != null) {

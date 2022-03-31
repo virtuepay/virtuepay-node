@@ -15,27 +15,11 @@ var path = require('path');
 virtuePay.setPrivateKeyPath(path.join(__dirname, '../your_rsa_private_key.pem'));
 
 /**
- * 创建订单退款
- */
-virtuePay.orders.createRefund(
-  "2001708280000128761", // ORDER ID
-  {
-    "description":"test-refund"
-  },
-  function(err, order) {
-    if (err!=null){
-      console.log("virtuePay.orders.creatRefund fail:",err)
-    }
-    // YOUR CODE
-  }
-);
-
-/**
  * 查询单个订单退款对象
  */
 virtuePay.orders.retrieveRefund(
-  "2001708220000258501", // ORDER ID
-  "re_5GefjD14GW50qrT40Gq9KmPS", // REFUND ID
+  "59953666363392", // ORDER ID
+  "59953919594496", // REFUND ID
   function(err, order) {
     if (err!=null){
       console.log("virtuePay.orders.retrieveRefund fail:",err)
@@ -48,7 +32,7 @@ virtuePay.orders.retrieveRefund(
  * 查询订单退款列表
  */
 virtuePay.orders.listRefunds(
-  "2001708220000258501", // ORDER ID
+  "59953666363392", // ORDER ID
   {'page': 1, 'per_page': 3},
   function(err, data) {
     if (err!=null){
